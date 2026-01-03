@@ -1,0 +1,4 @@
+.navbar li .active {
+  color: #e94242;
+  font-weight: 600;
+}
