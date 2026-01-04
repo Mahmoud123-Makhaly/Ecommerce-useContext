@@ -2,7 +2,10 @@ import { Link, NavLink } from "react-router-dom";
 import logo from "../assets/logo.png";
 import cart from "../assets/cart_icon.png";
 import "./index.css";
+import { useContext } from "react";
+import { shopContext } from "../../context";
 const Navbar = () => {
+  const { getTotalCartItems } = useContext(shopContext);
   const links = [
     {
       id: 1,
@@ -48,7 +51,7 @@ const Navbar = () => {
         <Link to="/cart">
           <img src={cart} alt="cart" />
           <span className="absolute block  w-[20px] text-center h-[20px] rounded-full bg-red-600 text-white end-0 top-0 ">
-            0{" "}
+            {getTotalCartItems()}
           </span>
         </Link>
       </div>

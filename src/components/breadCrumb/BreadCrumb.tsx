@@ -1,7 +1,6 @@
 import type { IProduct } from "../../interfaces";
 import arrow from "../assets/breadcrum_arrow.png";
 const BreadCrumb = ({ product }: { product?: IProduct | undefined }) => {
-  console.log(product);
   return (
     <div className="mb-4">
       <h2 className="flex gap-2 items-center flex-wrap">

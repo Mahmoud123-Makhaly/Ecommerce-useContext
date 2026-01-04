@@ -4,10 +4,10 @@ import Item from "../components/item/Item";
 import arrowDown from "../components/assets/dropdown_icon.png";
 
 const ShopCategory = ({ bannerImage }: { bannerImage: string }) => {
-  const AllProducts = useContext(shopContext);
+  const data = useContext(shopContext);
   const { pathname } = window.location;
   const category = pathname.split("/")[1];
-  const filteredProducts = AllProducts.filter(
+  const filteredProducts = data.all_product.filter(
     (product) => product.category === category
   );
   return (
@@ -21,7 +21,7 @@ const ShopCategory = ({ bannerImage }: { bannerImage: string }) => {
           <span className="font-semibold">
             Showing 1-{filteredProducts.length}
           </span>{" "}
-          out of {AllProducts.length} products
+          out of {data.all_product.length} products
         </p>
         <button className="border border-gray-300 py-3 px-7 rounded-3xl cursor-pointer flex items-center gap-2 ">
           Sort By <img src={arrowDown} alt="arrowDown" />
